@@ -1,0 +1,11 @@
+# Task 6 – Ethernet Port Report
+
+## 1. Diagnosis
+Late collisions and CRC errors combined with Half Duplex indicate a **Duplex Mismatch**[cite: 2].
+
+## 2. Linux Fix
+`sudo ethtool -s eth0 speed 100 duplex full autoneg on`[cite: 2]
+
+## 3. Addressing
+- `01:00:5e:0a:01:02`: IPv4 Multicast MAC address[cite: 2].
+- `3c:52:82`: Organizational Unique Identifier (OUI)[cite: 2].
