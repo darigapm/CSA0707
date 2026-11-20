@@ -1,0 +1,27 @@
+enable
+configure terminal
+hostname R2
+
+interface GigabitEthernet0/0
+ ip address 192.168.10.129 255.255.255.224
+ no shutdown
+ exit
+
+interface GigabitEthernet0/1
+ ip address 192.168.10.161 255.255.255.240
+ no shutdown
+ exit
+
+interface Serial0/0/0
+ ip address 192.168.10.178 255.255.255.252
+ no shutdown
+ exit
+
+router ospf 1
+ router-id 2.2.2.2
+ network 192.168.10.128 0.0.0.31 area 0
+ network 192.168.10.160 0.0.0.15 area 0
+ network 192.168.10.176 0.0.0.3 area 0
+ exit
+
+end
